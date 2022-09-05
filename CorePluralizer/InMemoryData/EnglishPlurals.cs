@@ -2074,8 +2074,6 @@ namespace CorePluralizer.InMemoryData
             new string[] {"species", "species"},
             new string[] {"deer", "deer"},
             new string[] {"fish", "fish"},
-            
-            
         };
 
         private static Dictionary<string, string> _pluralsBySingular;
@@ -2094,27 +2092,33 @@ namespace CorePluralizer.InMemoryData
 
                     foreach (var row in Lexicon)
                     {
-                        if(row!=null && row.Length>1)
+                        if (row != null && row.Length > 1)
                         {
                             var plural = row[0];
 
                             for (int i = 1; i < row.Length; i++)
                             {
-                                var singular = row[i];
-                                    
+                                var singular = row[i].ToLower();
+
                                 if (!_pluralsBySingular.ContainsKey(singular))
                                 {
-                                    _pluralsBySingular.Add(singular,plural);
-                                }        
+                                    _pluralsBySingular.Add(singular, plural);
+                                }
                             }
-                            _singularsByPlural.Add(plural,row[1]);
+
+                            plural = plural.ToLower();
+                            
+                            if (!_singularsByPlural.ContainsKey(plural))
+                            {
+                                _singularsByPlural.Add(plural, row[1]);
+                            }
                         }
                     }
                 }
-            }   
+            }
         }
-        
-        
+
+
         public static Dictionary<string, string> PluralsBySingular
         {
             get
@@ -2123,7 +2127,7 @@ namespace CorePluralizer.InMemoryData
                 return _pluralsBySingular;
             }
         }
-        
+
         public static Dictionary<string, string> SingularsByPlural
         {
             get
@@ -2132,7 +2136,5 @@ namespace CorePluralizer.InMemoryData
                 return _singularsByPlural;
             }
         }
-    
-    
     }
 }

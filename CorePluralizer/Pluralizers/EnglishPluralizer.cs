@@ -1,5 +1,6 @@
 using System.Linq;
 using CorePluralizer.InMemoryData;
+using CorePluralizer.Utilities;
 
 namespace CorePluralizer.Pluralizers
 {
@@ -8,12 +9,23 @@ namespace CorePluralizer.Pluralizers
         private readonly string[] _endingWithEs = {"s", "sh", "ch", "x", "z","o"};
         private readonly string[] _vowels = {"a", "e", "i", "o", "u"};
 
+
+
+        public string ToPlural(string nounSingular)
+        {
+            var plural = ToPluralUnMatched(nounSingular);
+
+            return CaseUtils.MatchCase(nounSingular, plural);
+        }
+        
+        
+        
         /// <summary>
         /// https://www.grammarly.com/blog/plural-nouns/
         /// </summary>
         /// <param name="nounSingular"></param>
         /// <returns></returns>
-        public string ToPlural(string nounSingular)
+        private string ToPluralUnMatched(string nounSingular)
         {
             
             var nounLowercase = nounSingular.ToLower();
@@ -48,7 +60,7 @@ namespace CorePluralizer.Pluralizers
                 return nounLowercase + "es";
             }
             // If a singular noun ends in ‑y and the letter before the -y is a consonant, change the ending to ‑ies to make the noun plural.
-            if (nounLowercase.EndsWith("y") && nounLowercase.Length > 1 && _vowels.Any(vow => nounLowercase.Substring(nounLowercase.Length - 1, 1) == vow))
+            if (nounLowercase.EndsWith("y") && nounLowercase.Length > 1 && _vowels.All(vow => nounLowercase.Substring(nounLowercase.Length - 2, 1) != vow))
             {
                 return nounMinusOne + "ies";
             }
