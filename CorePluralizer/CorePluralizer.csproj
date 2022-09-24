@@ -12,7 +12,7 @@
         <Version>1.0.0</Version>
         <Authors>Mani Moayedi</Authors>
         <Company>Acidmanic</Company>
-<!--        <PackageIcon>graphics/icon.png</PackageIcon>-->
+        <PackageIcon>graphics/icon.png</PackageIcon>
         <Description>Finds plural noun for a singular noun, using both irregular instances and pluralization rules.</Description>
         <Summary>Install, use 'string.ToPlural()'</Summary>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
@@ -24,12 +24,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <!-- NuGet -->
-        <!--        <None Include="../Graphics/icon.png">-->
-        <!--            <Pack>true</Pack>-->
-        <!--            <PackagePath>graphics/icon.png</PackagePath>-->
-        <!--            <CopyToOutputDirectory>Always</CopyToOutputDirectory>-->
-        <!--        </None>-->
+        <!--         NuGet -->
+        <None Include="../Graphics/icon.png">
+            <Pack>true</Pack>
+            <PackagePath>graphics/icon.png</PackagePath>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
         <None Include="../LICENSE.txt">
             <Pack>true</Pack>
             <PackagePath>LICENSE.txt</PackagePath>
