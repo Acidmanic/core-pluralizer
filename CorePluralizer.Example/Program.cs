@@ -22,7 +22,8 @@ namespace CorePluralizer.Example
                 "Boy",
                 "Plate",
                 "City",
-                "Cactus"
+                "Cactus",
+                "goose"
             };
 
             Console.WriteLine("-----------------------------");

@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CorePluralizer", "CorePlura
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CorePluralizer.Example", "CorePluralizer.Example\CorePluralizer.Example.csproj", "{3AFC3FE9-7136-4CAB-AD48-AB5B190F023A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{73CB01B3-6451-4E1F-BADD-A50C039E2A9A}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+		ChangeLog.md = ChangeLog.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
