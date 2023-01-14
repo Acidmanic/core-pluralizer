@@ -1448,6 +1448,7 @@ namespace CorePluralizer.InMemoryData
             new string[] {"perithecia", "perithecium"},
             new string[] {"peritonea", "peritoneum"},
             new string[] {"personae", "persona"},
+            new string[] {"persons", "person"},
             new string[] {"petechiae", "petechia"},
             new string[] {"pfennige", "pfennig"},
             new string[] {"phalanges", "phalange", "phalanx"},
